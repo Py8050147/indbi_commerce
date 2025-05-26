@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import { deliveryPersonSchema } from "@/lib/validators/deliveryPersonSchema";
-import { Form, useForm } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { Input } from "@/components/ui/input";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -9,7 +9,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Button } from "@/components/ui/button";
 import { Warehouse } from "@/types";
 import { Loader2 } from "lucide-react";
-import { FormField, FormItem, FormLabel, FormControl, FormDescription, FormMessage } from "@/components/ui/form";
+import { Form, FormField, FormItem, FormLabel, FormControl, FormDescription, FormMessage } from "@/components/ui/form";
 
 
 export type FormValues = z.input<typeof deliveryPersonSchema>
@@ -29,7 +29,7 @@ export type FormValues = z.input<typeof deliveryPersonSchema>
         }
     })
     const { data: warehouses, isLoading } = useQuery<Warehouse[]>({
-        queryKey: ['warehouse'],
+        queryKey: ['warehouses'],
         queryFn: () => getAllWarehouses()
     })
 

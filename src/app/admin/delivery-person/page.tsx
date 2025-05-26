@@ -3,7 +3,7 @@
 import React from 'react'
 import { useQuery } from '@tanstack/react-query'
 import { columns } from './_components/columns'
-import { Product } from '@/types'
+import {  Product } from '@/types'
 import { useNewDeliveryPerson } from '@/store/delivery-person/deliveryPerson'
 import { DataTable } from '../_components/data-table'
 import DeliverPersonSheet from './_components/delivery-person-sheet'
