@@ -20,6 +20,19 @@ export interface Warehouse {
   pincode: number
 }
 
+export interface Inventories {
+  id: number;
+  sku: string;
+  warehouse: string;
+  product: string;
+}
+
+export interface InventoryData {
+  sku: string;
+  warehouseId: number;
+  productId: number;
+}
+
 // export interface Product {
 //     id: string;
 //     name: string;

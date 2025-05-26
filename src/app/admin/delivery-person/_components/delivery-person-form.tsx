@@ -18,7 +18,7 @@ export type FormValues = z.input<typeof deliveryPersonSchema>
     onSubmit,
     disabled
 }: {
-    onSubmit: (formValus: FormValues) => void;
+    onSubmit: (formValues: FormValues) => void;
     disabled: boolean;
 }) => {
     const form = useForm<z.infer<typeof deliveryPersonSchema>>({

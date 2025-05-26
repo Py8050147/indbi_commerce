@@ -22,7 +22,7 @@ const CreateProductForm = ({
     onSubmit,
     disabled,
 }: {
-    onSubmit: (formValus: FormValues) => void;
+    onSubmit: (formValues: FormValues) => void;
     disabled: boolean;
 }) => {
     const form = useForm<z.infer<typeof productSchema>>({

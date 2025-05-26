@@ -29,7 +29,9 @@ export async function GET() {
             warehouses: warehouses.name,
             products: products.name
         }).from(inventories).leftJoin(products, eq(inventories.productId, products.id)).leftJoin(warehouses, eq(inventories.warehouseId, warehouses.id)).orderBy(desc(inventories.id))
+
+        return Response.json(allgetInventories)
     } catch (error) {
-        
+        return  Response.json({message: "inventories not get successfully"}, {status: 500})
     }
 }

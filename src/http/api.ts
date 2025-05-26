@@ -1,5 +1,5 @@
 import { api } from "./client";
-import { DeliverPerson, Warehouse } from "@/types";
+import { DeliverPerson, InventoryData, Warehouse } from "@/types";
 
 export const getAllProducts = async () => {
     const response = await api.get("/products");
@@ -40,4 +40,13 @@ export const getAllDeliveryPerson = async () => {
     return await response.data;
 }
 
+export const createInventory = async (data: InventoryData) => {
+    const response = await api.post('/inventories', data);
+    return response.data;
+}
+
+export const getAllInventory = async () => {
+    const response = await api.get('/inventories')
+    return response.data
+}
 
