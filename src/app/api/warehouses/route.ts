@@ -1,13 +1,13 @@
 import { db } from "@/lib/db/db";
 import { warehouseSchema } from "@/lib/validators/warehouseSchema";
 import { warehouses } from "@/lib/db/schema";
-import { TrophyIcon } from "lucide-react";
+
 
 export async function POST(request: Request) {
     const requestedData = await request.json()
     let validatedData;
     try {
-        validatedData = await warehouseSchema.parse(request)
+        validatedData = await warehouseSchema.parse(requestedData)
     } catch (error) {
         return Response.json({ message: error }, { status: 400 })
     }

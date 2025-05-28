@@ -8,7 +8,7 @@ export async function POST(request:Request) {
     let validatedData
 
     try {
-        validatedData = await inventoriesSchema.parse(validatedData)
+        validatedData = await inventoriesSchema.parse(requestedData)
     } catch (error) {
         return Response.json({ message: error }, { status: 400 })
     }
@@ -26,8 +26,8 @@ export async function GET() {
         const allgetInventories = await db.select({
             id: inventories.id,
             sku: inventories.sku,
-            warehouses: warehouses.name,
-            products: products.name
+            warehouse: warehouses.name,
+            product: products.name
         }).from(inventories).leftJoin(products, eq(inventories.productId, products.id)).leftJoin(warehouses, eq(inventories.warehouseId, warehouses.id)).orderBy(desc(inventories.id))
 
         return Response.json(allgetInventories)

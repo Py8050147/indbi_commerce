@@ -29,11 +29,13 @@ export async function  GET() {
             id: deliveryPersons.id,
             name: deliveryPersons.name,
             phone: deliveryPersons.phone,
-            warehouses: warehouses.name
-        }).from(deliveryPersons).leftJoin(warehouses, eq(deliveryPersons.warehouseId, warehouses.id)).orderBy(desc(deliveryPersons.id))
+            warehouse: warehouses.name
+        }).from(deliveryPersons).
+            leftJoin(warehouses, eq(deliveryPersons.warehouseId, warehouses.id)).
+            orderBy(desc(deliveryPersons.id))
 
         return Response.json(allDeliveryPersons)
     } catch (error) {
-        return Response.json({ message: 'Failed to fetch delivery persons' }, { status: 500 });
+        return Response.json({ message: 'Failed to fetch delivery persons'}, { status: 500 });
     }
 }

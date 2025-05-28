@@ -40,7 +40,7 @@ const DeliveryPersonsPage = () => {
                     <Loader2 className="size-10 animate-spin" />
                 </div>
             ) : (
-                <DataTable columns={columns} data={deliveryPersons || []} />
+                <DataTable columns={columns} data={deliveryPersons  || []} />
             )}
         </>
   )

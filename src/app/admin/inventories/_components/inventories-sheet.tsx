@@ -35,8 +35,8 @@ const CreateInvetories = () => {
     <Sheet open={isOpen} onOpenChange={onClose}>
     <SheetContent className="min-w-[28rem] space-y-4">
         <SheetHeader>
-            <SheetTitle>Create Product</SheetTitle>
-            <SheetDescription>Create a new product</SheetDescription>
+            <SheetTitle>Create Inventory</SheetTitle>
+            <SheetDescription>Create a new Inventory</SheetDescription>
         </SheetHeader>
         <CreateInvetoriesForm onSubmit={onSubmit} disabled={isPending} />
     </SheetContent>

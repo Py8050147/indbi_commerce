@@ -20,7 +20,7 @@ export const createProduct = async (data: FormData) => {
 
 export const getAllWarehouses = async () => {
     const response = await api.get("/warehouses");
-    console.log('Response', response.data)
+    console.log('Response-warehouse', response.data)
     return await response.data;
 }
 
@@ -31,12 +31,13 @@ export const createWarehouse = async (data: Warehouse) => {
 
 export const createDeliveryPerson = async (data: DeliverPerson) => {
     const response = await api.post('/delivery-persons', data)
+    console.log('data-delivery', response.data)
     return response.data
 }
 
 export const getAllDeliveryPerson = async () => {
     const response = await api.get("/delivery-persons");
-    console.log('Response', response.data)
+    console.log('Response-delivery', response.data)
     return await response.data;
 }
 

@@ -28,7 +28,7 @@ const DeliverPersonSheet = () => {
     })
 
     const onSubmit = (values: FormValues) => {
-        mutate(values as DeliverPerson);
+        mutate(values as unknown as DeliverPerson);
     };
 
   return (
